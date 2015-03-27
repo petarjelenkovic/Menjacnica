@@ -113,7 +113,7 @@ public class Kurs {
 		return true;
 	}
 	
-	private String dateToString() {
+	public String dateToString() {
 		int dan = datumKursa.get(GregorianCalendar.DAY_OF_MONTH);
 		int mesec = datumKursa.get(GregorianCalendar.MONTH);
 		int god = datumKursa.get(GregorianCalendar.YEAR);
