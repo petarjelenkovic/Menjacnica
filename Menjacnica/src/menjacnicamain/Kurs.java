@@ -34,8 +34,8 @@ public class Kurs {
 		return srednjiKurs;
 	}
 	public void setSrednjiKurs(int srednjiKurs) {
-		if(srednjiKurs<0){
-			throw new RuntimeException("Srednji kurs ne sme biti manji od nule");
+		if(srednjiKurs<0||srednjiKurs<kupovniKurs||srednjiKurs>prodajniKurs){
+			throw new RuntimeException("Srednji kurs ne sme biti manji od nule i mora biti izmedju kupovnog i prodajnog.");
 		} else
 		this.srednjiKurs = srednjiKurs;
 	}
@@ -43,8 +43,8 @@ public class Kurs {
 		return prodajniKurs;
 	}
 	public void setProdajniKurs(int prodajniKurs) {
-		if(prodajniKurs<0){
-			throw new RuntimeException("Prodajni kurs ne sme biti manji od nule");
+		if(prodajniKurs<0||prodajniKurs<srednjiKurs||prodajniKurs<kupovniKurs){
+			throw new RuntimeException("Prodajni kurs ne sme biti manji od nule i mora biti veci od srednjeg i kupovnog.");
 		} else
 		this.prodajniKurs = prodajniKurs;
 	}
@@ -52,8 +52,8 @@ public class Kurs {
 		return kupovniKurs;
 	}
 	public void setKupovniKurs(int kupovniKurs) {
-		if(kupovniKurs<0){
-			throw new RuntimeException("Kupovni kurs ne sme biti manji od nule");
+		if(kupovniKurs<0||kupovniKurs>srednjiKurs||kupovniKurs>prodajniKurs){
+			throw new RuntimeException("Kupovni kurs ne sme biti manji od nule i mora biti manji od srednjeg i prodajnog.");
 		} else
 		this.kupovniKurs = kupovniKurs;
 	}

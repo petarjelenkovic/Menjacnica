@@ -21,8 +21,8 @@ public class Menjacnica implements MenjacnicaInter{
 		kurs.setProdajniKurs(prodajni);
 		
 		for(int i=0;i<kursevi.size();i++){
-			Kurs krs = kursevi.get(i);
-			if(krs.getNazivValute().equals(nazivValute)&&krs.dateToString().equals(kurs.dateToString())){
+			
+			if(kursevi.get(i).getNazivValute().equals(nazivValute)&&kursevi.get(i).dateToString().equals(kurs.dateToString())){
 				System.out.println("Vec postoji vrednost kursa te valute za taj dan.");
 				return;
 			}
